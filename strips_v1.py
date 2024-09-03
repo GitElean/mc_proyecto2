@@ -7,7 +7,7 @@ synth = MidiSystem.getSynthesizer()
 synth.open()
 channels = synth.getChannels()
 
-BPM = 150
+BPM = 125
 beat_duration = 60.0 / BPM
 
 def play_note(channel, note, duration, volume=93):
