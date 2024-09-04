@@ -11,7 +11,7 @@ channels = synth.getChannels()
 synth.loadInstrument(synth.getDefaultSoundbank().getInstruments()[0])  # Load default soundbank
 # Set instruments for each channel
 channels[0].programChange(27)  # Electric Guitar (clean) for guitar
-channels[1].programChange(32)  # Synth Bass 2 for bass
+channels[1].programChange(33)  # Synth Bass 2 for bass
 channels[9].programChange(0)   # Acoustic Bass Drum for drums
 channels[2].programChange(0)   # Acoustic Grand Piano for piano or voice
 
@@ -32,7 +32,7 @@ def play_note(channel, note, duration, volume=93):
     channels[channel].noteOff(note, volume)
 
 def guitar():
-    
+    sleep(8)
     for _ in range(6):
         play_note(0, 52, 1.5)  # E3
         play_note(0, 52, 0.5)  # E3
@@ -57,6 +57,7 @@ def bass():
     # Continúa con las otras partes...
 
 def drums():
+    sleep(8)
     for _ in range(24):
         play_note(9, 36, 1)  # Bass Drum
         play_note(9, 38, 1)  # Snare Drum
